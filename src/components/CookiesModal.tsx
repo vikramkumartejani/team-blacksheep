@@ -24,7 +24,7 @@ const CookiesModal: React.FC = () => {
                         <p>
                             This website uses cookies to improve your experience. This information helps us
                             improve the website and provide a better user experience. For more information you
-                            can consult our: <a href="#" className="text-[#FFA234] underline italic">Privacy policy</a>
+                            can consult our: <a href="/privacy-policy" className="text-[#FFA234] underline italic">Privacy policy</a>
                         </p>
                         <p>
                             By clicking "Accept All," you agree to the use of all cookies. You can choose to "Reject

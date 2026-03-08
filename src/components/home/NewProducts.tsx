@@ -110,7 +110,7 @@ const NewProducts: React.FC = () => {
                 {/* Header - Aligned with Cards */}
                 <div className="pt-[30px] pb-[33px] flex items-end justify-between">
                     <h2 className="text-[34px] leading-11 font-semibold text-[#1D1D1D]">New Products</h2>
-                    <a href="#" className="hidden sm:flex items-center gap-2.5 text-[16px] leading-[21px] font-semibold text-[#1D1D1D]">
+                    <a href="/all-products" className="hidden sm:flex items-center gap-2.5 text-[16px] leading-[21px] font-semibold text-[#1D1D1D]">
                         All new Products
                         <img src={LeftSmallArrow} alt="Arrow" />
                     </a>

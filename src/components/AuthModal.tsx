@@ -100,7 +100,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMode = 's
                                 </div>
 
                                 <div className="pt-2.5 pb-5">
-                                    <a href="#" className="text-white hover:text-[#FFA234] text-[14px] leading-4 underline transition-colors">
+                                    <a href="/forgot-password" className="text-white hover:text-[#FFA234] text-[14px] leading-4 underline transition-colors">
                                         Forgot your password?
                                     </a>
                                 </div>

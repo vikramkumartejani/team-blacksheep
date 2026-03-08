@@ -427,7 +427,7 @@ const Navbar: React.FC = () => {
                                     );
                                 })}
 
-                                <a href="#" className="px-5 pt-5 mb-2.5 pb-[23px] text-[18px] leading-[21px] font-semibold text-white">Contact Us</a>
+                                <a href="/contactus" className="px-5 pt-5 mb-2.5 pb-[23px] text-[18px] leading-[21px] font-semibold text-white">Contact Us</a>
                             </div>
 
                             {/* Bottom Auth Section */}
