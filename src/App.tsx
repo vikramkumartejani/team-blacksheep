@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Hero from './components/home/Hero';
+import NewProducts from './components/home/NewProducts';
+import LevelSelection from './components/home/LevelSelection';
+import BestEquipment from './components/home/BestEquipment';
+import InstagramFeed from './components/home/InstagramFeed';
+import Features from './components/home/Features';
+import CookiesModal from './components/CookiesModal';
+
+import Footer from './layout/Footer';
+import Navbar from './layout/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <Hero />
+      <NewProducts />
+      <LevelSelection />
+      <BestEquipment />
+      <InstagramFeed />
+      <Features />
+      <Footer />
+      <CookiesModal />
     </div>
   );
 }
