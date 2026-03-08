@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Search, ChevronRight, ChevronDown, User } from 'lucide-react';
 import MobileLogo from '../assets/mobile-logo.svg';
 import Logo from '../assets/logo.svg';
 import Twitter from '../assets/icons/twitter.svg'

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import { ChevronLeft, ChevronRight, Heart, Plus, Minus } from 'lucide-react';
 import LeftSmallArrow from '../../assets/icons/left-small-arrow.svg';
 
 // Import Swiper styles
