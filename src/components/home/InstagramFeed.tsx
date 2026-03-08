@@ -12,13 +12,12 @@ import img6 from '../../assets/product-2.png';
 import img7 from '../../assets/product-3.png';
 import img8 from '../../assets/product-4.png';
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img1, img2];
+const images: string[] = [img1, img2, img3, img4, img5, img6, img7, img8, img1, img2];
 
 const InstagramFeed: React.FC = () => {
     return (
         <section className="py-10 md:py-20" style={{ background: "linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,1)),  #1D1D1D" }}>
             <div className="w-full max-w-[1360px] mx-auto">
-                {/* Continuous Auto-Scrolling Slider */}
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={30}
@@ -42,7 +41,6 @@ const InstagramFeed: React.FC = () => {
                     ))}
                 </Swiper>
 
-                {/* Instagram Follow Button */}
                 <div className="mt-5 flex justify-center px-5">
                     <button className="bg-[#FFA234] hover:bg-[#E1E1E6] text-white hover:text-[#1D1D1D] transition-all duration-150 px-3 py-2 sm:px-4 sm:py-3.5 rounded-[10px] text-[14px] sm:text-[18px] leading-[16px] sm:leading-[22px] tracking-[-0.1px] font-normal">
                         Follow us on Instagram

@@ -107,7 +107,6 @@ const NewProducts: React.FC = () => {
     return (
         <section className="bg-white overflow-hidden px-5 pb-[38px]">
             <div className="max-w-[1244px] mx-auto">
-                {/* Header - Aligned with Cards */}
                 <div className="pt-[30px] pb-[33px] flex items-end justify-between">
                     <h2 className="text-[34px] leading-11 font-semibold text-[#1D1D1D]">New Products</h2>
                     <a href="/all-products" className="hidden sm:flex items-center gap-2.5 text-[16px] leading-[21px] font-semibold text-[#1D1D1D]">
@@ -116,9 +115,7 @@ const NewProducts: React.FC = () => {
                     </a>
                 </div>
 
-                {/* Slider - Buttons are outside the 1244px alignment */}
                 <div className="relative mt-2.5">
-                    {/* Navigation Buttons - Always Visible */}
                     <button className="prev-btn absolute -left-[74px] top-[35%] -translate-y-1/2 z-10 w-[57px] h-[57px] bg-[#29292980] lg:flex items-center justify-center rounded-[14px] transition-all hidden">
                         <svg width="17" height="35" viewBox="0 0 17 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.2499 2.25C14.2499 2.25 2.25002 13.2973 2.25 17.2501C2.24997 21.2029 14.25 32.25 14.25 32.25" stroke="#0C1123" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -225,31 +222,6 @@ const NewProducts: React.FC = () => {
                     <div className="custom-product-pagination flex justify-center items-center gap-[15px] mt-[37px] swiper-pagination-clickable swiper-pagination-bullets"></div>
                 </div>
             </div>
-
-            <style>{`
-                .custom-product-pagination .swiper-pagination-bullet {
-                    width: 14px;
-                    min-width: 14px;
-                    height: 14px;
-                    background: #6F6F6F !important;
-                    opacity: 1;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    margin: 0 !important;
-                }
-                .custom-product-pagination .swiper-pagination-bullet-active {
-                    background: #FFA234 !important;
-                    opacity: 1;
-                }
-                /* Swiper Disabled Button Styling */
-                .prev-btn.swiper-button-disabled,
-                .next-btn.swiper-button-disabled {
-                    opacity: 0.4;
-                    cursor: not-allowed !important;
-                    pointer-events: auto !important;
-                }
-            `}</style>
         </section>
     );
 };

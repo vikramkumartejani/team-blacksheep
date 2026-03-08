@@ -9,7 +9,6 @@ interface AuthModalProps {
 const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMode = 'signin' }) => {
     const [mode, setMode] = useState<'signin' | 'signup' | 'signup_dealer' | 'signup_personal'>(initialMode);
 
-    // Sync mode with prop if it changes and modal opens
     React.useEffect(() => {
         if (isOpen) {
             setMode(initialMode);
@@ -20,11 +19,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMode = 's
 
     return (
         <div className="fixed inset-0 z-[200] flex items-center justify-center px-4">
-            {/* Blurred Backdrop */}
-            <div
-                className="absolute inset-0 bg-[#00000066] backdrop-blur-[4px]"
-                onClick={onClose}
-            />
+            <div className="absolute inset-0 bg-[#00000066] backdrop-blur-[4px]" onClick={onClose}/>
 
             {/* Modal Content */}
             <div className="bg-[#292930] rounded-[24px] w-full max-w-[649px] relative z-10 animate-in fade-in zoom-in-95 duration-200">

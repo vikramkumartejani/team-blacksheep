@@ -32,14 +32,12 @@ interface SearchModalProps {
 const SearchModal: React.FC<SearchModalProps> = ({ searchQuery, onClose }) => {
     if (!searchQuery) return null;
 
-    // Simulate search logic (case-insensitive include)
     const filteredResults = allProducts.filter(product =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     return (
         <>
-            {/* Transparent invisible backdrop to close when clicked outside */}
             <div
                 className="fixed inset-0 z-40"
                 onClick={onClose}
@@ -54,7 +52,6 @@ const SearchModal: React.FC<SearchModalProps> = ({ searchQuery, onClose }) => {
                                 key={product.id}
                                 className="flex items-center mb-2.5 last:mb-0 gap-2.5 cursor-pointer transition-colors"
                             >
-                                {/* Product Image with White Background */}
                                 <div className="w-12 h-12 bg-white rounded-[10px] flex items-center justify-center flex-shrink-0">
                                     <img
                                         src={product.image}
@@ -80,22 +77,6 @@ const SearchModal: React.FC<SearchModalProps> = ({ searchQuery, onClose }) => {
                         </div>
                     )}
                 </div>
-
-                {/* Custom scrollbar styling scoped locally */}
-                <style>{`
-                    .custom-scrollbar::-webkit-scrollbar {
-                        width: 4px;
-                        background: #393942;
-                    }
-                    .custom-scrollbar::-webkit-scrollbar-thumb {
-                        background: #E1E1E6;
-                        border-radius: 4px;
-                    }
-                    .custom-scrollbar::-webkit-scrollbar-track {
-                        background: #393942;
-                        margin: 10px 0;
-                    }
-                `}</style>
             </div>
         </>
     );

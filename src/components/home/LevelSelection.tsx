@@ -3,7 +3,14 @@ import BeginnerDrone from '../../assets/beginner-drone.jpg';
 import IntermediateDrone from '../../assets/intermediate-drone.png';
 import ProfessionalDrone from '../../assets/professional-drone.jpg';
 
-const levels = [
+interface Level {
+    title: string;
+    description: string;
+    image: string;
+    buttonText: string;
+}
+
+const levels: Level[] = [
     {
         title: "Beginner",
         description: "Eu nisi sint dolore tempor veniam proident exercitation proident dolore laborum aute. Ut sint voluptate ea nostrud. Incididunt laborum elit officia ipsum est Lorem non.",
@@ -35,7 +42,6 @@ const LevelSelection: React.FC = () => {
                 <div className="flex flex-wrap justify-center gap-10 md:grid md:grid-cols-3 md:gap-5 lg:gap-10">
                     {levels.map((level, idx) => (
                         <div key={idx} className="w-[calc(50%-20px)] md:w-full max-w-[307px] flex flex-col items-center group">
-                            {/* Circle Image Wrapper */}
                             <div className="w-[130px] h-[130px] bg-white rounded-full flex items-center justify-center mb-[30px] overflow-hidden shrink-0">
                                 <img
                                     src={level.image}
@@ -44,19 +50,16 @@ const LevelSelection: React.FC = () => {
                                 />
                             </div>
 
-                            {/* Level Title - Hidden on Mobile */}
                             <h3 className="hidden md:block text-[#FFA234] text-[22px] leading-[29px] font-semibold tracking-[0.22px] mb-5">
                                 {level.title}
                             </h3>
 
-                            {/* Level Description - Hidden on Mobile */}
                             <div className="hidden md:flex flex-grow flex-col items-center">
                                 <p className="text-white/50 text-[16px] leading-[24px] inter font-medium mb-[30px]">
                                     {level.description}
                                 </p>
                             </div>
 
-                            {/* Action Button - Always Visible, Small on Mobile */}
                             <div className="mt-auto">
                                 <button className="bg-[#FFA234] pt-2.5 px-3 py-2 rounded-[10px] text-[14px] leading-[14px] font-normal transition duration-300 hover:bg-[#E1E1E6] text-white hover:text-[#1D1D1D] whitespace-nowrap">
                                     {level.buttonText}

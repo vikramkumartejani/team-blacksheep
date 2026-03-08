@@ -18,3 +18,110 @@ body {
 .inter {
   font-family: "Inter", sans-serif;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  background: #393942;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #E1E1E6;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #393942;
+  margin: 10px 0;
+}
+
+
+/* Slider */
+.hero-swiper .swiper-pagination {
+  bottom: 70px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-swiper .custom-bullet {
+  width: 150px;
+  height: 10px;
+  background: #121215 !important;
+  opacity: 1 !important;
+  border-radius: 0px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+.hero-swiper .progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: #FFA234;
+  border-radius: 0px;
+}
+
+.hero-swiper .swiper-pagination-bullet-active .progress-bar {
+  animation: progressAnimation 3s linear forwards;
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-swiper .swiper-pagination {
+    width: 90% !important;
+    gap: 8px;
+    bottom: 49px !important;
+  }
+
+  .hero-swiper .custom-bullet {
+    width: 70px;
+  }
+
+}
+
+
+/* New Products Pagination */
+.custom-product-pagination .swiper-pagination-bullet {
+  width: 14px;
+  min-width: 14px;
+  height: 14px;
+  background: #6F6F6F !important;
+  opacity: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 !important;
+}
+
+.custom-product-pagination .swiper-pagination-bullet-active {
+  background: #FFA234 !important;
+  opacity: 1;
+}
+
+.prev-btn.swiper-button-disabled,
+.next-btn.swiper-button-disabled {
+  opacity: 0.4;
+  cursor: not-allowed !important;
+  pointer-events: auto !important;
+}

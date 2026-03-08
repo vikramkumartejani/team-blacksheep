@@ -2,19 +2,22 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation, EffectFade } from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
-// Import Assets
 import hero1 from '../../assets/hero-1.png';
 import hero2 from '../../assets/hero-2.png';
 import hero3 from '../../assets/hero-3.png';
 import hero4 from '../../assets/hero-4.png';
 
-const heroData = [
+interface HeroData {
+    title: string;
+    image: string;
+}
+
+const heroData: HeroData[] = [
     {
         title: "Mojito pro wing",
         image: hero1,
@@ -33,7 +36,7 @@ const heroData = [
     },
 ];
 
-const Hero = () => {
+const Hero: React.FC = () => {
     return (
         <section className="relative w-full h-[704px] sm:h-[750px] bg-[#1a1a1c] overflow-hidden group">
             <Swiper
@@ -79,62 +82,6 @@ const Hero = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-
-            {/* Custom CSS for Pagination Lines */}
-            <style>{`
-                .hero-swiper .swiper-pagination {
-                    bottom: 70px !important;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 20px;
-                    width: auto !important;
-                    left: 50% !important;
-                    transform: translateX(-50%);
-                    background: rgba(255, 255, 255, 0.1); 
-                    padding: 10px;
-                    border-radius: 5px;
-                    backdrop-filter: blur(4px);
-                }
-                .hero-swiper .custom-bullet {
-                    width: 150px;
-                    height: 10px;
-                    background: #121215 !important;
-                    opacity: 1 !important;
-                    border-radius: 0px;
-                    cursor: pointer;
-                    position: relative;
-                    overflow: hidden;
-                    margin: 0 !important;
-                }
-                .hero-swiper .progress-bar {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 100%;
-                    width: 0;
-                    background: #FFA234;
-                    border-radius: 0px;
-                }
-                .hero-swiper .swiper-pagination-bullet-active .progress-bar {
-                    animation: progressAnimation 3s linear forwards;
-                }
-                @keyframes progressAnimation {
-                    0% { width: 0; }
-                    100% { width: 100%; }
-                }
-                @media (max-width: 768px) {
-                    .hero-swiper .swiper-pagination {
-                        width: 90% !important;
-                        gap: 8px;
-                        bottom: 49px !important;
-                    }
-                    .hero-swiper .custom-bullet {
-                        width: 70px;
-                    }
-                    
-                }
-            `}</style>
         </section>
     );
 }

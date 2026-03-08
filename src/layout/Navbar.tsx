@@ -12,93 +12,191 @@ import AuthModal from '../components/AuthModal';
 
 interface SubCategory {
     label: string;
-    children?: string[];
+    href?: string;
+    children?: { label: string; href: string }[];
+}
+
+interface SocialLink {
+    name: string;
+    href: string;
+    icon: string;
 }
 
 interface NavItem {
     label: string;
     href: string;
     type?: 'mega' | 'list' | 'icons';
-    subItems?: (string | SubCategory)[];
+    subItems?: (string | SubCategory | SocialLink)[];
 }
 
 const navItems: NavItem[] = [
     {
         label: "Product categories",
-        href: "#",
+        href: "/shop",
         type: "mega",
         subItems: [
-            { label: "New products" },
-            { label: "Back in stock" },
-            { label: "Pre-order" },
+            { label: "New products", href: "/shop/new" },
+            { label: "Back in stock", href: "/shop/back-in-stock" },
+            { label: "Pre-order", href: "/shop/pre-order" },
             { label: "divider" },
             {
                 label: "Ready to fly",
-                children: ["RTF Drones", "Bind-N-Fly", "Plug-N-Play", "Micro Drones", "Racing Drones"]
+                href: "/shop/ready-to-fly",
+                children: [
+                    { label: "RTF Drones", href: "/shop/ready-to-fly/rtf-drones" },
+                    { label: "Bind-N-Fly", href: "/shop/ready-to-fly/bind-n-fly" },
+                    { label: "Plug-N-Play", href: "/shop/ready-to-fly/plug-n-play" },
+                    { label: "Micro Drones", href: "/shop/ready-to-fly/micro-drones" },
+                    { label: "Racing Drones", href: "/shop/ready-to-fly/racing-drones" }
+                ]
             },
             {
                 label: "Frames",
-                children: ["TBS Source One", "G5 Frames", "Micro Frames", "Spare Parts", "Camera Mounts"]
+                href: "/shop/frames",
+                children: [
+                    { label: "TBS Source One", href: "/shop/frames/tbs-source-one" },
+                    { label: "G5 Frames", href: "/shop/frames/g5-frames" },
+                    { label: "Micro Frames", href: "/shop/frames/micro-frames" },
+                    { label: "Spare Parts", href: "/shop/frames/spare-parts" },
+                    { label: "Camera Mounts", href: "/shop/frames/camera-mounts" }
+                ]
             },
             {
                 label: "Propellers",
-                children: ["Props sub 2\"", "Props 2.5\"", "Props 3\"", "Props 4\"", "Props 5\"", "Props 6\"", "Props 7\"", "Props 8\"", "Props 9\"", "Props 10\"", "Props 11\"", "Props 12\"", "Props 13\"", "Props 14\"", "Props 15\""]
+                href: "/shop/propellers",
+                children: [
+                    { label: "Props sub 2\"", href: "/shop/propellers/sub-2" },
+                    { label: "Props 2.5\"", href: "/shop/propellers/2-5" },
+                    { label: "Props 3\"", href: "/shop/propellers/3" },
+                    { label: "Props 4\"", href: "/shop/propellers/4" },
+                    { label: "Props 5\"", href: "/shop/propellers/5" },
+                    { label: "Props 6\"", href: "/shop/propellers/6" },
+                    { label: "Props 7\"", href: "/shop/propellers/7" },
+                    { label: "Props 8\"", href: "/shop/propellers/8" },
+                    { label: "Props 9\"", href: "/shop/propellers/9" },
+                    { label: "Props 10\"", href: "/shop/propellers/10" },
+                    { label: "Props 11\"", href: "/shop/propellers/11" },
+                    { label: "Props 12\"", href: "/shop/propellers/12" },
+                    { label: "Props 13\"", href: "/shop/propellers/13" },
+                    { label: "Props 14\"", href: "/shop/propellers/14" },
+                    { label: "Props 15\"", href: "/shop/propellers/15" }
+                ]
             },
             {
                 label: "Electronique",
-                children: ["Flight Controllers", "ESCs", "Stacks", "VTX", "Antennas", "Receivers"]
+                href: "/shop/electronics",
+                children: [
+                    { label: "Flight Controllers", href: "/shop/electronics/flight-controllers" },
+                    { label: "ESCs", href: "/shop/electronics/escs" },
+                    { label: "Stacks", href: "/shop/electronics/stacks" },
+                    { label: "VTX", href: "/shop/electronics/vtx" },
+                    { label: "Antennas", href: "/shop/electronics/antennas" },
+                    { label: "Receivers", href: "/shop/electronics/receivers" }
+                ]
             },
             {
                 label: "Battery",
-                children: ["LiPo Batteries", "Li-Ion Packs", "Chargers", "Field Charging", "Connectors"]
+                href: "/shop/batteries",
+                children: [
+                    { label: "LiPo Batteries", href: "/shop/batteries/lipo" },
+                    { label: "Li-Ion Packs", href: "/shop/batteries/li-ion" },
+                    { label: "Chargers", href: "/shop/batteries/chargers" },
+                    { label: "Field Charging", href: "/shop/batteries/field-charging" },
+                    { label: "Connectors", href: "/shop/batteries/connectors" }
+                ]
             },
             {
                 label: "FPV equipment",
-                children: ["Goggles", "Monitor", "HD Video", "Analog Video", "Modules"]
+                href: "/shop/fpv-equipment",
+                children: [
+                    { label: "Goggles", href: "/shop/fpv-equipment/goggles" },
+                    { label: "Monitor", href: "/shop/fpv-equipment/monitor" },
+                    { label: "HD Video", href: "/shop/fpv-equipment/hd-video" },
+                    { label: "Analog Video", href: "/shop/fpv-equipment/analog-video" },
+                    { label: "Modules", href: "/shop/fpv-equipment/modules" }
+                ]
             },
             {
                 label: "Motors",
-                children: ["Micro Motors", "Long Range Motors", "Racing Motors", "Prop Adapters", "Spare Parts"]
+                href: "/shop/motors",
+                children: [
+                    { label: "Micro Motors", href: "/shop/motors/micro" },
+                    { label: "Long Range Motors", href: "/shop/motors/long-range" },
+                    { label: "Racing Motors", href: "/shop/motors/racing" },
+                    { label: "Prop Adapters", href: "/shop/motors/prop-adapters" },
+                    { label: "Spare Parts", href: "/shop/motors/spare-parts" }
+                ]
             },
             {
                 label: "Controllers",
-                children: ["TBS Tango 2", "TBS Mambo", "Sticks & Ends", "Upgrades", "Cases"]
+                href: "/shop/controllers",
+                children: [
+                    { label: "TBS Tango 2", href: "/shop/controllers/tbs-tango-2" },
+                    { label: "TBS Mambo", href: "/shop/controllers/tbs-mambo" },
+                    { label: "Sticks & Ends", href: "/shop/controllers/sticks-ends" },
+                    { label: "Upgrades", href: "/shop/controllers/upgrades" },
+                    { label: "Cases", href: "/shop/controllers/cases" }
+                ]
             },
             {
                 label: "RC link",
-                children: ["Crossfire", "Tracer", "Antennas", "Receivers", "Modules"]
+                href: "/shop/rc-link",
+                children: [
+                    { label: "Crossfire", href: "/shop/rc-link/crossfire" },
+                    { label: "Tracer", href: "/shop/rc-link/tracer" },
+                    { label: "Antennas", href: "/shop/rc-link/antennas" },
+                    { label: "Receivers", href: "/shop/rc-link/receivers" },
+                    { label: "Modules", href: "/shop/rc-link/modules" }
+                ]
             },
             { label: "divider" },
-            { label: "Parts bundles" },
-            { label: "Gears" },
-            { label: "Software" },
+            { label: "Parts bundles", href: "/shop/parts-bundles" },
+            { label: "Gears", href: "/shop/gears" },
+            { label: "Software", href: "/shop/software" },
         ]
     },
     {
         label: "About",
-        href: "#",
+        href: "/about",
         type: "list",
-        subItems: ["About us", "Becoming a dealer", "Made to order", "Manufacturing capabilities", "Career"]
+        subItems: [
+            { label: "About us", href: "/about" },
+            { label: "Becoming a dealer", href: "/about/dealer" },
+            { label: "Made to order", href: "/about/made-to-order" },
+            { label: "Manufacturing capabilities", href: "/about/manufacturing" },
+            { label: "Career", href: "/about/career" }
+        ]
     },
     {
         label: "News and events",
-        href: "#",
+        href: "/news-events",
     },
     {
         label: "Community",
-        href: "#",
+        href: "/community",
         type: "icons",
-        subItems: ["twitter", "instagram", "facebook", "youtube", "threads"]
+        subItems: [
+            { name: "twitter", href: "https://twitter.com/yourbrand", icon: "twitter" },
+            { name: "instagram", href: "https://instagram.com/yourbrand", icon: "instagram" },
+            { name: "facebook", href: "https://facebook.com/yourbrand", icon: "facebook" },
+            { name: "youtube", href: "https://youtube.com/yourbrand", icon: "youtube" },
+            { name: "threads", href: "https://threads.net/yourbrand", icon: "threads" }
+        ]
     },
     {
         label: "Support",
-        href: "#",
+        href: "/support",
         type: "list",
-        subItems: ["FAQs", "Dealers' guide", "Beginners' guide", "Software updates"]
+        subItems: [
+            { label: "FAQs", href: "/support/faq" },
+            { label: "Dealers' guide", href: "/support/dealers-guide" },
+            { label: "Beginners' guide", href: "/support/beginners-guide" },
+            { label: "Software updates", href: "/support/software-updates" }
+        ]
     },
     {
         label: "Contact Us",
-        href: "#",
+        href: "/contact-us",
     },
 ];
 
@@ -113,21 +211,25 @@ const Navbar: React.FC = () => {
 
     const renderMegaMenu = (item: NavItem) => {
         const categories = item.subItems || [];
-        const activeSub = categories.find((sub): sub is SubCategory => typeof sub !== 'string' && sub.label === activeSubCategory);
+        const activeSub = categories.find((sub): sub is SubCategory => 
+            typeof sub !== 'string' && 
+            'label' in sub && 
+            'children' in sub && 
+            sub.label === activeSubCategory
+        );
 
         return (
             <div className="absolute top-full left-0 w-full min-h-[500px] z-50 transform-gpu animate-in fade-in duration-150 ease-out">
-                {/* Backdrop - Matching Figma: #434349 at 50% opacity + 20px blur */}
                 <div className="absolute inset-0 bg-[#43434980] backdrop-blur-[20px]" />
 
                 <div className="max-w-[1440px] px-10 mx-auto flex h-full min-h-[500px] relative z-10">
                     {/* Left Sidebar - Categories */}
                     <div className="w-[221px] bg-[#7F7F8080] py-[15px] overflow-y-auto no-scrollbar relative z-20">
                         {categories.map((sub, idx) => {
-                            if (typeof sub !== 'string' && sub.label === 'divider') {
+                            if (typeof sub !== 'string' && 'label' in sub && sub.label === 'divider') {
                                 return <div key={`divider-${idx}`} className="mx-[31.5px] my-[5px] border-t border-white" />;
                             }
-                            const label = typeof sub === 'string' ? sub : sub.label;
+                            const label = typeof sub === 'string' ? sub : ('label' in sub ? sub.label : '');
                             const isActive = activeSubCategory === label;
 
                             return (
@@ -151,12 +253,15 @@ const Navbar: React.FC = () => {
 
                     {/* Main Content Area */}
                     <div className="flex-1 relative py-5 px-2.5 overflow-hidden bg-transparent">
-                        <div className="relative z-10 h-full">
                             <div className="grid grid-cols-4 justify-items-center gap-y-2.5">
-                                {activeSub?.children?.map((child: string) => (
-                                    <div key={child} className="text-[16px] leading-[21px] font-semibold py-2.5 text-white hover:text-[#ff922d] cursor-pointer transition-colors duration-100 flex items-center gap-2 group/child">
-                                        {child}
-                                    </div>
+                                {activeSub?.children?.map((child: { label: string; href: string }) => (
+                                    <a 
+                                        key={child.label} 
+                                        href={child.href}
+                                        className="text-[16px] leading-[21px] font-semibold py-2.5 text-white hover:text-[#ff922d] cursor-pointer transition-colors duration-100 flex items-center gap-2 group/child"
+                                    >
+                                        {child.label}
+                                    </a>
                                 ))}
                             </div>
 
@@ -165,7 +270,6 @@ const Navbar: React.FC = () => {
                                     Browse the latest {activeSubCategory.toLowerCase()}...
                                 </div>
                             )}
-                        </div>
                     </div>
                 </div>
             </div>
@@ -178,17 +282,22 @@ const Navbar: React.FC = () => {
     const renderAboutDropdown = (item: NavItem) => {
         return (
             <div className="absolute top-full left-0 w-full py-[30px] z-50 animate-in fade-in slide-in-from-top-1 duration-150 overflow-hidden">
-                {/* Backdrop - Matching Figma: #434349 at 50% opacity + 20px blur */}
                 <div className="absolute inset-0 bg-[#43434980] backdrop-blur-[20px]" />
 
                 <div className="max-w-[1440px] px-10 mx-auto flex h-full items-center relative z-10">
                     <div className="flex items-center gap-[50px]">
-                        {item.subItems?.map((sub: any) => {
-                            const label = typeof sub === 'string' ? sub : sub.label;
+                        {item.subItems?.map((sub, index) => {
+                            // Skip string items and dividers
+                            if (typeof sub === 'string' || (sub as SubCategory).label === 'divider') return null;
+                            
+                            const subCategory = sub as SubCategory;
+                            const label = subCategory.label;
+                            const href = subCategory.href;
+                            
                             return (
-                                <div key={label} className="text-[16px] leading-[19px] font-normal text-white hover:text-[#FFA234] cursor-pointer transition duration-300">
+                                <a key={label || index} href={href || '#'} className="text-[16px] leading-[19px] font-normal text-white hover:text-[#FFA234] cursor-pointer transition duration-300">
                                     {label}
-                                </div>
+                                </a>
                             );
                         })}
                     </div>
@@ -203,17 +312,22 @@ const Navbar: React.FC = () => {
     const renderSupportDropdown = (item: NavItem) => {
         return (
             <div className="absolute top-full left-0 w-full py-[30px] z-50 animate-in fade-in slide-in-from-top-1 duration-150 overflow-hidden">
-                {/* Backdrop - Matching Figma: #434349 at 50% opacity + 20px blur */}
                 <div className="absolute inset-0 bg-[#43434980] backdrop-blur-[20px]" />
 
                 <div className="max-w-[1440px] px-10 mx-auto flex h-full items-center relative z-10">
                     <div className="flex items-center gap-[50px]">
-                        {item.subItems?.map((sub: any) => {
-                            const label = typeof sub === 'string' ? sub : sub.label;
+                        {item.subItems?.map((sub, index) => {
+                            // Skip string items and dividers
+                            if (typeof sub === 'string' || (sub as SubCategory).label === 'divider') return null;
+                            
+                            const subCategory = sub as SubCategory;
+                            const label = subCategory.label;
+                            const href = subCategory.href;
+                            
                             return (
-                                <div key={label} className="text-[16px] leading-[19px] font-normal text-white hover:text-[#FFA234] cursor-pointer transition duration-300">
+                                <a key={label || index} href={href || '#'} className="text-[16px] leading-[19px] font-normal text-white hover:text-[#FFA234] cursor-pointer transition duration-300">
                                     {label}
-                                </div>
+                                </a>
                             );
                         })}
                     </div>
@@ -228,32 +342,40 @@ const Navbar: React.FC = () => {
     const renderCommunityDropdown = (item: NavItem) => {
         return (
             <div className="absolute top-full left-0 w-full py-[30px] z-50 animate-in fade-in slide-in-from-top-1 duration-150 overflow-hidden">
-                {/* Backdrop - Matching Figma: #434349 at 50% opacity + 20px blur */}
                 <div className="absolute inset-0 bg-[#43434980] backdrop-blur-[20px]" />
 
                 <div className="max-w-[1440px] px-10 mx-auto flex h-full items-center relative z-10">
                     <div className="flex items-center gap-[50px]">
-                        {item.subItems?.map((sub: any) => {
-                            const label = typeof sub === 'string' ? sub : sub.label;
-
+                        {item.subItems?.map((social, index) => {
+                            // Only process SocialLink items
+                            if (typeof social === 'string') return null;
+                            
+                            const socialLink = social as SocialLink;
+                            
                             return (
-                                <div key={label} className="cursor-pointer transition-all hover:scale-110">
-                                    {label === 'twitter' && (
-                                        <img src={Twitter} alt="twitter" width={24} height={24} />
+                                <a 
+                                    key={socialLink.name || index} 
+                                    href={socialLink.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="cursor-pointer transition-all hover:scale-110"
+                                >
+                                    {socialLink.icon === 'twitter' && (
+                                        <img src={Twitter} alt="Twitter" width={24} height={24} />
                                     )}
-                                    {label === 'instagram' && (
+                                    {socialLink.icon === 'instagram' && (
                                         <img src={Instagram} alt="Instagram" width={24} height={24} />
                                     )}
-                                    {label === 'facebook' && (
+                                    {socialLink.icon === 'facebook' && (
                                         <img src={Facebook} alt="Facebook" width={24} height={24} />
                                     )}
-                                    {label === 'youtube' && (
+                                    {socialLink.icon === 'youtube' && (
                                         <img src={Youtube} alt="Youtube" width={24} height={24} />
                                     )}
-                                    {label === 'threads' && (
+                                    {socialLink.icon === 'threads' && (
                                         <img src={Threads} alt="Threads" width={24} height={24} />
                                     )}
-                                </div>
+                                </a>
                             );
                         })}
                     </div>
@@ -385,38 +507,57 @@ const Navbar: React.FC = () => {
                                                 <div className="bg-[#434349B2] backdrop-blur-[10px] py-2.5 animate-in slide-in-from-top-2 duration-200">
                                                     {item.label === "Community" ? (
                                                         <div className="flex flex-wrap gap-10 px-10">
-                                                            {item.subItems?.map((sub: any) => {
-                                                                const label = typeof sub === 'string' ? sub : sub.label;
+                                                            {item.subItems?.map((social, index) => {
+                                                                // Only process SocialLink items
+                                                                if (typeof social === 'string') return null;
+                                                                
+                                                                const socialLink = social as SocialLink;
+                                                                
                                                                 return (
-                                                                    <div key={label} className="cursor-pointer transition-all py-4">
-                                                                        {label === 'twitter' && (
-                                                                            <img src={Twitter} alt="twitter" width={24} height={24} />
+                                                                    <a 
+                                                                        key={socialLink.name || index} 
+                                                                        href={socialLink.href}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="cursor-pointer transition-all py-4"
+                                                                    >
+                                                                        {socialLink.icon === 'twitter' && (
+                                                                            <img src={Twitter} alt="Twitter" width={24} height={24} />
                                                                         )}
-                                                                        {label === 'instagram' && (
+                                                                        {socialLink.icon === 'instagram' && (
                                                                             <img src={Instagram} alt="Instagram" width={24} height={24} />
                                                                         )}
-                                                                        {label === 'facebook' && (
+                                                                        {socialLink.icon === 'facebook' && (
                                                                             <img src={Facebook} alt="Facebook" width={24} height={24} />
                                                                         )}
-                                                                        {label === 'youtube' && (
+                                                                        {socialLink.icon === 'youtube' && (
                                                                             <img src={Youtube} alt="Youtube" width={24} height={24} />
                                                                         )}
-                                                                        {label === 'threads' && (
+                                                                        {socialLink.icon === 'threads' && (
                                                                             <img src={Threads} alt="Threads" width={24} height={24} />
                                                                         )}
-                                                                    </div>
+                                                                    </a>
                                                                 );
                                                             })}
                                                         </div>
                                                     ) : (
                                                         <>
-                                                            {item.subItems?.map((sub: any) => {
-                                                                if (typeof sub !== 'string' && sub.label === 'divider') return null;
-                                                                const label = typeof sub === 'string' ? sub : sub.label;
+                                                            {item.subItems?.map((sub, index) => {
+                                                                if (typeof sub !== 'string' && (sub as SubCategory).label === 'divider') return null;
+                                                                if (typeof sub === 'string') {
+                                                                    return (
+                                                                        <div key={sub} className="px-10 py-[11.5px] text-[16px] leading-[19px] font-normal text-white cursor-pointer">
+                                                                            {sub}
+                                                                        </div>
+                                                                    );
+                                                                }
+                                                                const subCategory = sub as SubCategory;
+                                                                const label = subCategory.label;
+                                                                const href = subCategory.href;
                                                                 return (
-                                                                    <div key={label} className="px-10 py-[11.5px] text-[16px] leading-[19px] font-normal text-white cursor-pointer">
+                                                                    <a key={label || index} href={href || '#'} className="block px-10 py-[11.5px] text-[16px] leading-[19px] font-normal text-white cursor-pointer">
                                                                         {label}
-                                                                    </div>
+                                                                    </a>
                                                                 );
                                                             })}
                                                         </>
